@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>NicEditを非表示で初期化</title>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="lib/nicEdit.js"></script>
+		<style>
+			textarea {
+				width: 100%;
+			}
+			#visibility {
+				visibility: hidden;
+			}
+			#display {
+				display: none;
+			}
+		</style>
+		<script>
+			$(function() {
+				$('#show').on('click', function() {
+					// <textarea> を WYSIWYG エディタに変換
+					nicEditors.allTextAreas();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="show">表示</button>
+		<h1>visibility で隠していた場合</h1>
+		<textarea id="visibility"></textarea>
+		<h1>display で隠していた場合</h1>
+		<textarea id="display"></textarea>
+	</body>
+</html>
